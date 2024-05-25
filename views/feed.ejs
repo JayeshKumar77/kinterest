@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/feed.css">
+    <title>Feed</title>
+</head>
+<body>
+    <%- include("navbar"); %>
+        <div class="card-container">
+            <% posts.forEach((elem)=>{ %>
+
+                <div class="cards">
+                    <div class="card pins">
+                        <div class="each-card">
+                            <img src="/images/uploads/<%= elem.image %>" alt="">
+                        </div>
+                        <div class="card-info">
+                            <h5><%= elem.title %></h5>
+                            <small><%= elem.user.username %></small>
+                        </div>
+                    </div>
+                </div>
+              <%  }) %>
+        </div>
+</body>
+</html>

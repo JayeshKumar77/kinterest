@@ -1,0 +1,165 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+}
+
+:root {
+  --main-color: #e60023;
+  --text-color: #333333;
+  --text-color2: #767676;
+  --border-color: #e1e1e1;
+}
+
+.logo svg {
+  fill: var(--main-color);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* border: 2px solid red; */
+  align-items: center;
+  background-color: grey;
+}
+
+.passport-container {
+  display: flex;
+  /* height: 100%; */
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid red; */
+  width: 490px;
+  border-radius: 40px;
+  background-color: white;
+  box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.inner-passport {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 13px;
+  font-size: 1.6rem;
+}
+
+.innerpassport-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-passport form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.inner-passport h1 {
+  font-weight: 500;
+  color: var(--text-color);
+  /* font-size: 3.3rem; */
+}
+
+.inner-passport small {
+  font-weight: 500;
+  /* font-size: 1.5rem; */
+  color: var(--text-color2);
+}
+
+.passport-input {
+  padding: 15px 10px;
+  border-radius: 17px;
+  border: none;
+  border: 2px solid var(--border-color);
+  width: 250px;
+  margin-top: 5px;
+}
+
+.passport-input::placeholder {
+  font-size: 1.2rem;
+}
+
+.passport-input:focus {
+  outline: 4px solid #5bbdff;
+}
+
+.inner-passport label {
+  margin-top: 10px;
+}
+
+.btn {
+  background: var(--main-color);
+  color: white;
+  font-weight: 500;
+  width: 272px;
+  border: none;
+  border-radius: 50px;
+  margin-top: 8px;
+  font-size: 1.4rem;
+
+}
+
+
+.inner-passport a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+@media (max-width:500px) {
+  html {
+    font-size: 50.5%;
+
+  }
+  .btn[type="submit"] {
+    text-align: center;
+    padding: 11px 0px 24px;
+  }
+
+  .passport-container {
+    width: 95%;
+  }
+
+  .inner-passport {
+    width: 88%;
+  }
+
+  .inner-passport form {
+
+    width: 74%;
+  }
+
+  .passport-input {
+    width: auto;
+    height: 5px;
+    border-radius: 13px;
+  }
+
+
+}
+@media (max-width: 300px) {
+    html{
+      font-size: 35.5%;
+    }
+    .passport-input{
+      height: 0px;
+      border-radius: 13px;
+    }
+}
+@media (max-width: 215px) {
+  .inner-passport h1{
+    font-size: 2.5rem;
+  }
+}

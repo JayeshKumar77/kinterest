@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+
+<body>
+    <%- include("navbar"); %>
+        <div class="container">
+            <form id="uploadform" hidden action="/fileupload" method="post" enctype="multipart/form-data">
+                <input type="file" name="image">
+            </form>
+            <div class="profile-container">
+                <div class="profile-img-container">
+                    <div class="profile-img">
+                        <img src="/images/uploads/<%= user.profileImage %>" alt="">
+                    </div>
+                    <span id="uploadicon"><i class="ri-pencil-fill"></i></span>
+                </div>
+                <div class="name">
+                    <div class="profile-name">
+                        <h1><%= user.name %></h1>
+                    </div>
+                    <div class="profile-username">
+                        <small><%= user.username %></small>
+                    </div>
+                </div>
+                <!-- <div class="btn">
+                    <a href="/edit">Edit profile</a>
+                </div> -->
+                <a href="/add" class="btn-2">Add new Post</a>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="cards">
+                <div class="card pins">
+                    <div class="each-card">
+                        <img src="images/uploads/<%= user?.posts[0]?.image %>" alt="">
+                    </div>
+                    <div class="card-info">
+                        <h3>Your Uploaded pins</h3>
+                        <small>
+                            <%= user.posts.length %> Pins
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.querySelector("#uploadicon").addEventListener("click", () => {
+                document.querySelector("#uploadform input").click();
+            })
+            document.querySelector("#uploadform input").addEventListener("change", () => {
+                document.querySelector("#uploadform").submit();
+            })
+            document.querySelector(".card").addEventListener("click",()=> {
+                window.location.href = '/show/posts';
+            })
+        </script>
+</body>
+
+</html>

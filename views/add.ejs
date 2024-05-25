@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/add.css">
+    <title>Add new Post</title>
+</head>
+<body>
+    <%- include("navbar"); %>
+    <div class="post-container">
+        <p>Create a new post.</p>
+        <hr>
+        <form action="/createpost" method="post" enctype="multipart/form-data">
+            <input type="file" name="postimage">
+            <input class="title txt-input" type="text" placeholder="Title" name="title">
+            <textarea class="discr txt-input" type="text" placeholder="Description" name="description"></textarea>
+            <input class="submit-input" type="submit">
+        </form>
+    </div>
+
+</body>
+</html>
